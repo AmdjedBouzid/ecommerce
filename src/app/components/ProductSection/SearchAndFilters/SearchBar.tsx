@@ -6,7 +6,7 @@ interface SearchBarProps {
 }
 function SearchBar({ searchTerm, setSearchTerm }: SearchBarProps) {
   return (
-    <div className="w-full lg:w-auto ml-2">
+    <div className="w-full lg:w-auto min-sm:ml-2">
       <div className="relative search-bar">
         <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
         <input
