@@ -58,7 +58,7 @@ function NavBarMobile({
   return (
     <motion.div
       ref={ref}
-      className="absolute top-0 right-0 bottom-0 w-9/12 bg-white dark:bg-gray-900 shadow-lg z-50 md:hidden h-screen p-6 flex flex-col gap-8 border-l border-gray-200 dark:border-gray-700"
+      className="absolute top-0 right-0 bottom-0 w-9/12 bg-white shadow-lg z-50 md:hidden h-screen p-6 flex flex-col gap-8 border-l border-gray-200"
       initial="hidden"
       animate="visible"
       exit="exit"
@@ -68,7 +68,7 @@ function NavBarMobile({
       <div className="h-8 w-full pl-2">
         <button
           onClick={() => setMobileOpen(false)}
-          className="absolute left-3 top-3 z-999 flex h-10 w-10 items-center justify-center rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-black dark:text-white transition-colors hover:bg-gray-50 dark:hover:bg-gray-700"
+          className="absolute left-3 top-3 z-999 flex h-10 w-10 items-center justify-center rounded-full bg-white border border-gray-200 text-black transition-colors hover:bg-gray-50"
         >
           <XBtn />
         </button>
@@ -80,14 +80,14 @@ function NavBarMobile({
             {item.to.startsWith("#") ? (
               <button
                 onClick={() => handleSectionClick(item.to)}
-                className="w-full px-4 py-3 text-gray-900 dark:text-white font-medium hover:text-primary dark:hover:text-primary transition-colors flex gap-2 items-center justify-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
+                className="w-full px-4 py-3 text-gray-900 font-medium hover:text-primary transition-colors flex gap-2 items-center justify-center rounded-lg hover:bg-gray-100"
               >
                 {item.name}
               </button>
             ) : (
               <Link
                 href={item.to}
-                className="w-full px-4 py-3 text-gray-900 dark:text-white font-medium hover:text-primary dark:hover:text-primary transition-colors flex gap-2 items-center justify-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
+                className="w-full px-4 py-3 text-gray-900 font-medium hover:text-primary transition-colors flex gap-2 items-center justify-center rounded-lg hover:bg-gray-100"
                 onClick={() => setMobileOpen(false)}
               >
                 {item.name}

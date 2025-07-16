@@ -26,18 +26,18 @@ function ProductsTable({ Products, setProducts, loading }: ProductsTableProps) {
   const [showImage, setShowImage] = useState(false);
 
   return (
-    <div className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm dark:border-gray-700 dark:bg-gray-800">
+    <div className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm">
       <div className="max-w-full overflow-x-auto">
         <div className="min-w-[1000px] max-sm:min-w-[700px]">
           <Table>
-            <TableHeader className="bg-gradient-to-r from-gray-50 to-gray-100 dark:from-gray-700 dark:to-gray-800 border-b border-gray-200 dark:border-gray-600">
+            <TableHeader className="bg-gradient-to-r from-gray-50 to-gray-100 border-b border-gray-200">
               <TableRow>
                 {["Product", "Category", "Price", "Stock", "Actions"].map(
                   (title, idx) => (
                     <TableCell
                       key={idx}
                       isHeader
-                      className="px-6 py-4 font-semibold text-gray-700 text-start text-sm dark:text-gray-300"
+                      className="px-6 py-4 font-semibold text-gray-700 text-start text-sm"
                     >
                       {title}
                     </TableCell>
@@ -46,16 +46,16 @@ function ProductsTable({ Products, setProducts, loading }: ProductsTableProps) {
               </TableRow>
             </TableHeader>
 
-            <TableBody className="divide-y divide-gray-100 dark:divide-gray-700">
+            <TableBody className="divide-y divide-gray-100">
               {loading
                 ? Array.from({ length: 8 }).map((_, index) => (
                     <TableRow
                       key={index}
-                      className="hover:bg-gray-50 dark:hover:bg-gray-700/50"
+                      className="hover:bg-gray-50"
                     >
                       {Array.from({ length: 5 }).map((__, i) => (
                         <TableCell key={i} className="px-6 py-4">
-                          <div className="h-4 w-3/4 rounded-lg bg-gray-200 dark:bg-gray-600 animate-pulse"></div>
+                          <div className="h-4 w-3/4 rounded-lg bg-gray-200 animate-pulse"></div>
                         </TableCell>
                       ))}
                     </TableRow>
@@ -152,7 +152,7 @@ function ProductsTable({ Products, setProducts, loading }: ProductsTableProps) {
                             }}
                             className="p-2 hover:bg-red-50 :hover:bg-red-900/20"
                           >
-                            <Trash2 className="w-4 h-4 text-red-600 dark:text-red-400" />
+                            <Trash2 className="w-4 h-4 text-red-600" />
                           </Button> */}
                         </div>
                       </TableCell>

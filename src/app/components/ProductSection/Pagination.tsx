@@ -11,11 +11,11 @@ function Pagination({ currentPage, totalPages, onPageChange }: Props) {
   const pages = Array.from({ length: totalPages }, (_, i) => i + 1);
 
   return (
-    <ul className="flex justify-center gap-1 text-gray-900 dark:text-gray-100">
+    <ul className="flex justify-center gap-1 text-gray-900">
       <li>
         <button
           onClick={() => currentPage > 1 && onPageChange(currentPage - 1)}
-          className="grid size-8 place-content-center rounded border border-gray-200 dark:border-gray-700 transition-colors hover:bg-gray-50 dark:hover:bg-gray-700 cursor-pointer"
+          className="grid size-8 place-content-center rounded border border-gray-200 transition-colors hover:bg-gray-50 cursor-pointer"
           aria-label="Previous page"
         >
           <Minus />
@@ -42,7 +42,7 @@ function Pagination({ currentPage, totalPages, onPageChange }: Props) {
           onClick={() =>
             currentPage < totalPages && onPageChange(currentPage + 1)
           }
-          className="grid size-8 place-content-center rounded border border-gray-200 dark:border-gray-700 transition-colors hover:bg-gray-50 dark:hover:bg-gray-700 cursor-pointer"
+          className="grid size-8 place-content-center rounded border border-gray-200 transition-colors hover:bg-gray-50 cursor-pointer"
           aria-label="Next page"
         >
           <Plus />
