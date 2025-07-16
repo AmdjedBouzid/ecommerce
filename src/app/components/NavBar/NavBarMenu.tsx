@@ -49,6 +49,11 @@ function NavBarMobile({
     }
     setMobileOpen(false);
   };
+  let newItems: LinkType[] = [];
+
+  !user
+    ? (newItems = [...items, { name: "login", to: "/Login" }])
+    : (newItems = items);
 
   return (
     <motion.div
@@ -70,7 +75,7 @@ function NavBarMobile({
       </div>
 
       <ul className="flex flex-col items-center gap-6 py-4">
-        {items.map((item, key) => (
+        {newItems.map((item, key) => (
           <li key={key} className="flex justify-center items-center w-full">
             {item.to.startsWith("#") ? (
               <button
