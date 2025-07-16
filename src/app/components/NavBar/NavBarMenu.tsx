@@ -1,6 +1,5 @@
 "use client";
 import { Link as LinkType } from "@/utils/types/link";
-import { Undo2, Sun, Moon } from "lucide-react";
 import Link from "next/link";
 import React, { useEffect, useRef } from "react";
 import { motion } from "framer-motion";

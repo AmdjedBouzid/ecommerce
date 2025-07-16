@@ -65,7 +65,7 @@ const NavBar = () => {
       <div className="flex items-center gap-3 min-w-[160px] animate-none">
         <Link
           href="/"
-          className="font-black text-2xl tracking-wider text-gray-800 select-none hover:scale-105 transition-transform duration-200 logo-gradient"
+          className="font-black text-2xl max-sm:text-[13px] tracking-wider text-gray-800 select-none hover:scale-105 transition-transform duration-200 logo-gradient"
           style={{
             letterSpacing: "0.12em",
             textShadow: "0 2px 4px rgba(0,0,0,0.1)",
