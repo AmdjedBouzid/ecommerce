@@ -52,7 +52,7 @@ function AddProductModal({ setProducts, closeModal }: AddProductModalProps) {
   }, [categories]);
 
   return (
-    <div className="relative w-full max-w-[800px] overflow-hidden rounded-3xl bg-white dark:bg-gray-900 shadow-2xl border border-gray-100 dark:border-gray-700">
+    <div className="relative w-full max-w-[800px] overflow-hidden rounded-3xl bg-white :bg-gray-900 shadow-2xl border border-gray-100 :border-gray-700">
       {/* Header */}
       <div className="relative bg-gradient-to-r from-primary to-secondary p-6 text-white">
         <div className="flex items-center justify-between">
@@ -111,13 +111,13 @@ function AddProductModal({ setProducts, closeModal }: AddProductModalProps) {
 
             {/* Category */}
             <div className="lg:col-span-1">
-              <label className="block text-sm font-medium text-gray-700 mb-2 dark:text-gray-300">
+              <label className="block text-sm font-medium text-gray-700 mb-2 :text-gray-300">
                 Category
               </label>
               <select
                 value={categoryId}
                 onChange={(e) => setCategoryId(Number(e.target.value))}
-                className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 dark:bg-gray-800 dark:border-gray-600 dark:text-white"
+                className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 :bg-gray-800 :border-gray-600 :text-white"
               >
                 {categoriesLoading ? (
                   <option>Loading categories...</option>
@@ -144,19 +144,19 @@ function AddProductModal({ setProducts, closeModal }: AddProductModalProps) {
 
             {/* Image upload section */}
             <div className="lg:col-span-2">
-              <label className="block text-sm font-medium text-gray-700 mb-3 dark:text-gray-300">
+              <label className="block text-sm font-medium text-gray-700 mb-3 :text-gray-300">
                 Product Images
               </label>
-              
+
               {/* Upload Button */}
               <div className="mb-4">
                 <button
                   onClick={() => fileInputRef.current?.click()}
                   disabled={loading}
-                  className="w-full p-4 border-2 border-dashed border-gray-300 rounded-xl hover:border-primary hover:bg-gray-50 dark:hover:bg-gray-800 transition-all duration-200 flex flex-col items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full p-4 border-2 border-dashed border-gray-300 rounded-xl hover:border-primary hover:bg-gray-50 :hover:bg-gray-800 transition-all duration-200 flex flex-col items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   <Upload className="w-8 h-8 text-gray-400" />
-                  <span className="text-sm font-medium text-gray-600 dark:text-gray-400">
+                  <span className="text-sm font-medium text-gray-600 :text-gray-400">
                     {loading ? "Uploading..." : "Click to upload images"}
                   </span>
                   <span className="text-xs text-gray-500">
@@ -176,7 +176,7 @@ function AddProductModal({ setProducts, closeModal }: AddProductModalProps) {
               {/* Image Preview Grid */}
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
                 {imageUrls.length === 0 ? (
-                  <div className="col-span-full h-32 rounded-xl border-2 border-dashed border-gray-300 flex items-center justify-center text-gray-400 dark:border-gray-600">
+                  <div className="col-span-full h-32 rounded-xl border-2 border-dashed border-gray-300 flex items-center justify-center text-gray-400 :border-gray-600">
                     <div className="text-center">
                       <Upload className="w-8 h-8 mx-auto mb-2 text-gray-400" />
                       <p className="text-sm">No images uploaded</p>
@@ -188,12 +188,14 @@ function AddProductModal({ setProducts, closeModal }: AddProductModalProps) {
                       <img
                         src={url}
                         alt={`Product image ${idx + 1}`}
-                        className="w-full h-24 object-cover rounded-xl border-2 border-gray-200 dark:border-gray-600 group-hover:border-primary transition-colors duration-200"
+                        className="w-full h-24 object-cover rounded-xl border-2 border-gray-200 :border-gray-600 group-hover:border-primary transition-colors duration-200"
                       />
                       <button
                         className="absolute -top-2 -right-2 p-1 bg-red-500 text-white rounded-full hover:bg-red-600 transition-colors duration-200 opacity-0 group-hover:opacity-100"
                         onClick={() =>
-                          setImageUrls((prev) => prev.filter((_, i) => i !== idx))
+                          setImageUrls((prev) =>
+                            prev.filter((_, i) => i !== idx)
+                          )
                         }
                       >
                         <X className="w-3 h-3" />
@@ -207,7 +209,7 @@ function AddProductModal({ setProducts, closeModal }: AddProductModalProps) {
         </div>
 
         {/* Action buttons */}
-        <div className="flex justify-end items-center gap-4 pt-6 border-t border-gray-200 dark:border-gray-700">
+        <div className="flex justify-end items-center gap-4 pt-6 border-t border-gray-200 :border-gray-700">
           <Button
             size="md"
             variant="outline"

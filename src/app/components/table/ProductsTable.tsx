@@ -64,20 +64,20 @@ function ProductsTable({ Products, setProducts, loading }: ProductsTableProps) {
                   Products.map((prod) => (
                     <TableRow
                       key={prod.id}
-                      className="hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors duration-200 cursor-pointer group"
+                      className="hover:bg-gray-50  transition-colors duration-200 cursor-pointer group"
                     >
                       <TableCell className="px-6 py-4 text-start">
                         <div className="flex items-center gap-3">
-                          <div className="w-10 h-10 rounded-lg bg-gray-100 dark:bg-gray-600 flex items-center justify-center">
-                            <span className="text-lg font-semibold text-gray-600 dark:text-gray-400">
+                          <div className="w-10 h-10 rounded-lg bg-gray-100 :bg-gray-600 flex items-center justify-center">
+                            <span className="text-lg font-semibold text-gray-600 :text-gray-400">
                               {prod.name.charAt(0).toUpperCase()}
                             </span>
                           </div>
                           <div>
-                            <h4 className="font-medium text-gray-900 dark:text-white group-hover:text-primary transition-colors duration-200">
+                            <h4 className="font-medium text-gray-900 :text-white group-hover:text-primary transition-colors duration-200">
                               {prod.name}
                             </h4>
-                            <p className="text-sm text-gray-500 dark:text-gray-400">
+                            <p className="text-sm text-gray-500 :text-gray-400">
                               ID: {prod.id}
                             </p>
                           </div>
@@ -85,13 +85,13 @@ function ProductsTable({ Products, setProducts, loading }: ProductsTableProps) {
                       </TableCell>
 
                       <TableCell className="px-6 py-4 text-start">
-                        <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300">
+                        <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800 :bg-blue-900/30 :text-blue-300">
                           {prod.category.name}
                         </span>
                       </TableCell>
 
                       <TableCell className="px-6 py-4 text-start">
-                        <span className="font-semibold text-gray-900 dark:text-white">
+                        <span className="font-semibold text-gray-900 :text-white">
                           ${prod.price}
                         </span>
                       </TableCell>
@@ -101,10 +101,10 @@ function ProductsTable({ Products, setProducts, loading }: ProductsTableProps) {
                           <span
                             className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
                               prod.stock > 10
-                                ? "bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300"
+                                ? "bg-green-100 text-green-800 :bg-green-900/30 :text-green-300"
                                 : prod.stock > 0
-                                ? "bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300"
-                                : "bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300"
+                                ? "bg-yellow-100 text-yellow-800 :bg-yellow-900/30 :text-yellow-300"
+                                : "bg-red-100 text-red-800 :bg-red-900/30 :text-red-300"
                             }`}
                           >
                             {prod.stock > 10
@@ -113,7 +113,7 @@ function ProductsTable({ Products, setProducts, loading }: ProductsTableProps) {
                               ? "Low Stock"
                               : "Out of Stock"}
                           </span>
-                          <span className="text-sm text-gray-600 dark:text-gray-400">
+                          <span className="text-sm text-gray-600 :text-gray-400">
                             ({prod.stock})
                           </span>
                         </div>
@@ -128,9 +128,9 @@ function ProductsTable({ Products, setProducts, loading }: ProductsTableProps) {
                               e.stopPropagation();
                               router.push(`/Admin/Products/${prod.id}`);
                             }}
-                            className="p-2 hover:bg-blue-50 dark:hover:bg-blue-900/20"
+                            className="p-2 hover:bg-blue-50 :hover:bg-blue-900/20"
                           >
-                            <Eye className="w-4 h-4 text-blue-600 dark:text-blue-400" />
+                            <Eye className="w-4 h-4 text-blue-600 :text-blue-400" />
                           </Button>
                           {/* <Button
                             size="sm"
@@ -139,9 +139,9 @@ function ProductsTable({ Products, setProducts, loading }: ProductsTableProps) {
                               e.stopPropagation();
                               router.push(`/Admin/Products/${prod.id}`);
                             }}
-                            className="p-2 hover:bg-green-50 dark:hover:bg-green-900/20"
+                            className="p-2 hover:bg-green-50 :hover:bg-green-900/20"
                           >
-                            <Edit className="w-4 h-4 text-green-600 dark:text-green-400" />
+                            <Edit className="w-4 h-4 text-green-600 :text-green-400" />
                           </Button>
                           <Button
                             size="sm"
@@ -150,7 +150,7 @@ function ProductsTable({ Products, setProducts, loading }: ProductsTableProps) {
                               e.stopPropagation();
                               // Handle delete
                             }}
-                            className="p-2 hover:bg-red-50 dark:hover:bg-red-900/20"
+                            className="p-2 hover:bg-red-50 :hover:bg-red-900/20"
                           >
                             <Trash2 className="w-4 h-4 text-red-600 dark:text-red-400" />
                           </Button> */}
