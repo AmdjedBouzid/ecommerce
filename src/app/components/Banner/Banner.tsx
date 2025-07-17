@@ -107,6 +107,7 @@ const BannerSlider = () => {
                   src="https://res.cloudinary.com/dhrrzmg7h/image/upload/v1752737919/swhsfnmlvlcdcjhz3xdj.jpg"
                   alt="Fashion Collection"
                   className="w-full h-full object-cover"
+                  loading="lazy"
                 />
                 {/* Overlay Gradient */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>

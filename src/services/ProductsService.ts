@@ -183,12 +183,12 @@ export const createProduct = async (
     if (response.status === 201) {
       setProducts((prev) => [...prev, response.data as Product]);
       toast.success("Product created successfully!");
-      if (closeModal) closeModal();
     }
   } catch (error) {
     errorMessage(error, toast);
   } finally {
     setLoading(false);
+    if (closeModal) closeModal();
   }
 };
 export const fetchProduct = async (

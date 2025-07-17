@@ -51,7 +51,7 @@ function ProductDetails({ productId }: ProductDetailsPageProps) {
           </Link>
         </div>
         <div
-          className="bg-white rounded-2xl flex items-center justify-center mb-6 aspect-square overflow-hidden border border-gray-200 shadow-md"
+          className="bg-white rounded-2xl flex items-center justify-center mb-6 aspect-square overflow-hidden border border-gray-200 shadow-md cursor-pointer"
           onClick={() => {
             setShowImage(true),
               setShowImageUrl(product.images[selectedImage].url);
@@ -131,7 +131,7 @@ function ProductDetails({ productId }: ProductDetailsPageProps) {
           </div>
 
           {/* Thumbnails */}
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap gap-4 cursor-pointer">
             {product?.images.map((img, idx) => (
               <button
                 key={idx}
