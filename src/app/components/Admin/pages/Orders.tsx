@@ -60,7 +60,7 @@ function Orders() {
         <div className="text-gray-500 text-center py-16">No orders found.</div>
       ) : (
         <FilterOrders
-          filteredOrders={filteredOrders}
+          filteredOrders={filteredOrders || []}
           statusLabels={statusLabels}
           handleStatus={handleStatus}
           setOrders={setOrders}

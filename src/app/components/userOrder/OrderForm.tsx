@@ -57,6 +57,7 @@ function OrderForm() {
     e.preventDefault();
     try {
       setIsLoading(true);
+
       const formData = {
         items: buyDirectlyProduct
           ? [
@@ -69,6 +70,7 @@ function OrderForm() {
               productId: item.idProduct,
               quantity: item.quantity,
             })),
+
         withDelivery: isWithDelivery,
         deliveryPrice: isWithDelivery ? deliveryPrice : undefined,
         deliveryType: isWithDelivery ? deliveryType : undefined,
@@ -84,16 +86,38 @@ function OrderForm() {
           .filter(Boolean),
       };
 
+      // ✅ Input validation
+      if (
+        !formData.firstName ||
+        !formData.familyName ||
+        !formData.email ||
+        formData.phoneNumbers.length === 0
+      ) {
+        toast.error("You must fill all required personal information.");
+        return;
+      }
+
+      if (formData.withDelivery) {
+        if (
+          !formData.deliveryCompanyId ||
+          !formData.deliveryPrice ||
+          !formData.deliveryType ||
+          !formData.state ||
+          !formData.municipality
+        ) {
+          toast.error("You must fill all required delivery details.");
+          return;
+        }
+      }
+
       const response = await axiosInstance.post("/orders", formData);
       if (response.status === 201) {
         if (buyDirectlyProduct) {
           setBuyDirectlyProduct(null);
-          toast.success("order confirmed ");
-          router.push("/");
         } else {
           clearCart(setCart);
         }
-
+        toast.success("Order confirmed");
         router.push("/");
       }
     } catch (error) {
