@@ -62,12 +62,6 @@ function AddProductModal({ setProducts, closeModal }: AddProductModalProps) {
               Fill in the product details below to create a new listing.
             </p>
           </div>
-          <button
-            onClick={closeModal}
-            className="p-2 rounded-full hover:bg-white/20 transition-colors duration-200"
-          >
-            <X className="w-5 h-5" />
-          </button>
         </div>
       </div>
 

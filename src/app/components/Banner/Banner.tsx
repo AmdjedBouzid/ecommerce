@@ -104,7 +104,7 @@ const BannerSlider = () => {
               {/* Main Image */}
               <div className="relative w-full h-[500px] rounded-2xl overflow-hidden shadow-ecommerce animate-float">
                 <img
-                  src="/assets/banner/banner2.jpg"
+                  src="https://res.cloudinary.com/dhrrzmg7h/image/upload/v1752737919/swhsfnmlvlcdcjhz3xdj.jpg"
                   alt="Fashion Collection"
                   className="w-full h-full object-cover"
                 />
