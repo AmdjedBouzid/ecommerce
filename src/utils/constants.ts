@@ -2,7 +2,7 @@ import { Link as LinkType } from "@/utils/types/link";
 import { House, ShoppingBasket, Grid, Star, Phone } from "lucide-react";
 import { DeliveryCompany } from "./types/DeliveryCompany";
 // export const DOMAIN = "http://localhost:5000";
-export const DOMAIN = "https://d1mq0pd2-5000.euw.devtunnels.ms";
+export const DOMAIN = "https://backend2-qgwd.onrender.com";
 export const adminRoutes: LinkType[] = [
   {
     name: "Products",
